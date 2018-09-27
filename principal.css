@@ -1,0 +1,15 @@
+
+body{
+	background: #FFFFFF;
+
+}
+
+.header{
+	width: 100%;
+	position: fixed;
+	height: 15%;
+	background: #FFFF00;
+	top: 0;
+	left: 0;
+}
+
