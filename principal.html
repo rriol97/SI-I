@@ -2,25 +2,68 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<TITLE>FlickHut</TITLE>
+		<title>FlickHut</title>
+		<link rel="stylesheet" href="principal.css">
 	</head>
 	
 	<body>
 
-		<div id = "header">
+		<div class="container">
+			<div class="header">
 
-			<img src="imgs/logo.png.jpg" />
-				
-			<h1>FlickHut</h1>
+				<img src="imgs/logo.png" />
+					
+				<h1>FlickHut</h1>
 
-			<form action="/action_page.php" autocomplete="on" target=_top>
-	  			Username: <input type="text" name="uname"><br><br>
-	  			Password: <input type="text" name="pss"><br><br>
-	  			<input type="submit" value="Sing Up">
-	  			<input type="submit" value="LogIn">
-			</form>
+		<!-- 		<form action="/action_page.php" autocomplete="on" target=_top>
+					<input type="busq" name="busq">
+					<input type="submit" value="Search">
+				</form> -->
 
-		</div>	
+				<form action="/action_page.php" autocomplete="on" target=_top>
+					<table>
+						<tr>
+							<td>Username:</td>
+							<td><input type="text" name="uname"></td>
+
+						</tr>
+
+						<tr>
+							<td>Password:</td>
+							<td><input type="text" name="pss"></td>
+						</tr>
+
+						<tr>
+							<td><input type="submit" value="Sing Up"></td>
+							<td><input type="submit" value="LogIn"></td>
+		  				</tr>
+		  			</table>
+				</form>
+			</div>
+
+			<div class="menu">
+				<u1 class="horizontal">
+					<p>Mi perfil</p>
+					<li>Cesta de la compra</li>
+					<li>Historial de compras</li>
+					<li>Mis datos</li>
+					<p>Géneros</p>
+					<li>Acción</li>
+					<li>Ciencia ficción</li>
+					<li>Comedia</li>
+					<li>Drama</li>
+					<li>Fantasía</li>
+					<li>Melodrama</li>
+					<li>Musical</li>
+					<li>Romance</li>
+					<li>Suspense</li>
+					<li>Terror</li>
+				</u1>
+			</div>
+
+			<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">Copyright © 2011 W3Schools.com</div>
+
+		</div>
 	</body>
 
 
