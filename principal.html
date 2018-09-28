@@ -2,79 +2,88 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>FlickHut</title>
+		<title>TheHut</title>
 		<link rel="stylesheet" href="principal.css">
 	</head>
 	
 	<body>
+		<div id="container">
 
-		<div class="container">
-			<div class="header">
+			<div id="header">
 
-				<img src="imgs/logo.png" />
+				<img id="logo" src="imgs/logo.png" />
 					
-				<h1>FlickHut</h1>
+				<h1>the hut</h1>
 
-		<!-- 		<form action="/action_page.php" autocomplete="on" target=_top>
-					<input type="busq" name="busq">
-					<input type="submit" value="Search">
-				</form> -->
+			
+				<div class="searchBox">
 
-				<form action="/action_page.php" autocomplete="on" target=_top>
+					<input class="searchGap" type="text" value="  Type title, actor, director..."/>
+					<input class="categoryBox" type="text" value="  Genre"/>
+					<input class="searchButton" type="submit" value="Search"/>
+
+				</div>
+				
+				
+				<div> 
 					<table>
 						<tr>
 							<td>Username:</td>
-							<td><input type="text" name="uname"></td>
-
+							<td>
+								<form>
+									<input class="headerTextBox" type="text" name="uname">
+								</form>
+							</td>
 						</tr>
 
 						<tr>
 							<td>Password:</td>
-							<td><input type="text" name="pss"></td>
+							<td>
+								<form action="/action_page.php" autocomplete="on" target=_top>
+									<input  class="headerTextBox" type="Password" name="pwd">
+								</form>
+							</td>
 						</tr>
 
 						<tr>
-							<td><input type="submit" value="Sing Up"></td>
-							<td><input type="submit" value="LogIn"></td>
+							<td> 
+							</td>
+							<td>
+								<form action="/action_page.php" autocomplete="on" target=_top>
+									<input class="headerButton" type="submit" value="Register">
+									<input class="headerButton" type="submit" value="Log In">
+								</form>	
+							</td>
 		  				</tr>
 		  			</table>
-				</form>
-			</div>
+		  		</div>
+		  	</div>
 
-			<div class="menu">
+			<div id="menuPane">
 
-				<ul class="enum">
-					<li><a href="#">Mi perfil</a>
-
-						<ul class="submenu">
-							<li><a href="#">Cesta de la compra</a></li>
-							<li><a href="#">Historial de compras</a></li>
-							<li><a href="#">Mis datos</a></li>
-
-						</ul> 
-					</li>	
-
-					<li><a href="#">Géneros</a>
-						<ul class = "submenu">
-							<li><a href="#">Acción</a></li>
-							<li><a href="#">Ciencia ficción</a></li>
-							<li><a href="#">Comedia</a></li>
-							<li><a href="#">Drama</a></li>
-							<li><a href="#">Fantasía</a></li>
-							<li><a href="#">Melodrama</a></li>
-							<li><a href="#">Musical</a></li>
-							<li><a href="#">Romance</a></li>
-							<li><a href="#">Suspense</a></li>
-							<li><a href="#">Terror</a></li>
-						</ul>
-					</li> 
-
-					<li><a href="#">Contáctanos</a></li>
+				<ul class="menu">
+					<li class="clasifier"><span><p>My profile</p></span></li>
+					<li class="profile"><span><a href="#">Shopping Cart</a></span></li>
+					<li class="profile"><span><a href="#">Shopping History</a></span></li>
+					<li class="profile"><span><a href="#">My Data</a></span></li>
+					<li class="clasifier"><span><p>Genres</p></span></li>
+					<li class="genre"><span><a href="#">Acción</a></span></li>
+					<li class="genre"><span><a href="#">Ciencia ficción</a></span></li>
+					<li class="genre"><span><a href="#">Comedia</a></span></li>
+					<li class="genre"><span><a href="#">Drama</a></span></li>
+					<li class="genre"><span><a href="#">Fantasía</a></span></li>
+					<li class="genre"><span><a href="#">Melodrama</a></span></li>
+					<li class="genre"><span><a href="#">Musical</a></span></li>
+					<li class="genre"><span><a href="#">Romance</a></span></li>
+					<li class="genre"><span><a href="#">Suspense</a></span></li>
+					<li class="genre"><span><a href="#">Terror</a></span></li>
 				</ul>
 
 			</div>
 
-			<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">Copyright © 2011 W3Schools.com</div>
+			<div id="footer">
+				HTML NO es mi amigo. Pero CSS es un demonio
+			</div>
 
 		</div>
 	</body>
