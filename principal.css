@@ -40,7 +40,7 @@ body{
 }
 
 .menu{
-	width: 15%;
+	width: 205px;
 	height: 100%;
 	float: left;
 	left: 0;
@@ -50,5 +50,47 @@ body{
 	border-color:  #000000;
 	margin-top:120px;	
 }
+
+.enum{
+	line-height: 1.9;
+	text-decoration: none;
+	margin-left:0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	padding: 0;
+	float: left;
+}
+
+.enum li{
+	list-style: none;
+	border-bottom: 1px solid #666;
+	width:200px;
+}
+
+.enum li a{
+	display: block;
+	text-decoration: none;
+	padding:6px;
+	border-left: 4px solid #444;
+	box-shadow: 2px 2px 5px #000;
+}
+
+.enum li a:hover{
+	color:#C37D35;
+	transition: all .3s;
+}
+
+.enum li ul{
+	display:none;
+}
+
+.enum li:hover ul{
+	display: block;
+}
+.submenu li a{
+	background: #dad6d5;
+}
+
+
 
 
