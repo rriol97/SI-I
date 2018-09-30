@@ -121,8 +121,10 @@ body{
 	background: #F8DD74;
 	border-style: solid;
 	border-color:  #000000;
-	margin-top:115px;	
+	margin-top: 0px;	
 	font-size: 0;
+
+	z-index: 800;
 }
 
 .menu{
@@ -197,4 +199,5 @@ ul li.genre:hover{
 	vertical-align: middle;
 	text-align: center;
 	clear:both;
+	z-index: 900;
 }
