@@ -1,26 +1,24 @@
 
 #contentPane{
-	float:left;
-
 	margin-right: 0px;
 	margin-top: 120px;	
-	margin-left: 200px;
-	margin-bottom: 40px;
+	margin-left: 190px;
+	margin-bottom: 30px;
 
 	justify-content: center;
 	align-content: center;
 
 	background-color:#454444 ;
 
-	width: 85.7%;
-	height: 500px;
+	width: 86.45%;
+	height: 510px;
 }
 
 #contentPane h1{
-	margin-top: 30px;
-	margin-left: 50px;
+	margin-top: 100px;
+	margin-left: 60px;
 	font-family: 'Oswald', Helvetica, sans-serif;
-	font-size: 50px;
+	font-size: 70px;
 	color: tomato;
 	text-transform: uppercase;
 	text-shadow:  3px 3px 3px black;
@@ -35,47 +33,54 @@
 	position: absolute;
 	top:50%;
 	left:50%;
-	width:900px;
+	width:600px;
 	margin-left:-400px;
-	height:300px;
+	height:200px;
 	margin-top:-100px;
 	padding:5px;
 
 }
 
 .user_information table{
-	width: 50%;
-	margin-left: 100px;
-	margin-top: 0px;
+	margin-left: 40px;
 }
 
 .user_information table tr td{
 	width: 30px;
 	line-height: 30px;
 }
-
-.usernameTextBox {
-	height:25px;
+.user_information table tr td form input{
+	height:20px;
 	width: 300px; 
-	font-size: 40;
+	margin-left: 50px;
+	border: 1px solid black;
 }
 
-.creditCardBox {
-	height:25px;
-	width: 300px; 
-}
-.emailTextBox {
-	height:25px;
-	width: 300px;
+.user_information table tr td p{
+	width: 90px;
+	font-size: 16px;
 }
 
-.cancelButton {
-	height:25px;
-	width: 300px;
+.buttonsPane{
+	margin-top: 250px;
+	margin-left: 72px;
 }
+
+.cancelButton{
+	height: 30px;
+	width: 100px;
+	font-size: 16px;
+	border: 1px solid black;
+}
+
 .acceptButton{
-	height:25px;
-	width: 300px;
+	height: 30px;
+	width: 100px;
+	font-size: 16px;
+	border: 1px solid black;
 }
+
+
+
 
 
