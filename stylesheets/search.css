@@ -6,11 +6,15 @@
 	margin-left: 200px;
 	margin-bottom: 40px;
 
+	padding-top: 20px;
+
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: flex-start;
 	align-content: center;
+
+	overflow-y: auto;
 }
 
 

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>TheHut</title>
-		<link rel="stylesheet" href="template.css">
+		<link rel="stylesheet" href="stylesheets/template.css">
 	</head>
 	
 	<body>
@@ -11,7 +11,9 @@
 
 			<div id="header">
 
-				<img id="logo" src="imgs/logo.png" />
+				<a href="file:///home/mesektet/siI/main.html">
+					<img id="logo" src="imgs/logo.png" />
+				</a>
 					
 				<h1>the hut</h1>
 
@@ -20,7 +22,9 @@
 
 					<input class="searchGap" type="text" placeholder="  Type title, actor, director..."/>
 					<input class="categoryBox" type="text" placeholder="  Genre"/>
-					<input class="searchButton" type="submit" value="Search"/>
+					<form action="file:///home/mesektet/siI/search.html">
+						<input class="searchButton" type="submit" value="Search"/>
+					</form>
 
 				</div>
 				
@@ -48,11 +52,13 @@
 						<tr>
 							<td> 
 							</td>
-							<td>
-								<form action="/action_page.php" autocomplete="on" target=_top>
+							<td id="buttonRow"> 						
+								<form action="file:///home/mesektet/siI/register.html" autocomplete="on" target=_top>
 									<input class="headerButton" type="submit" value="Register">
+								</form>
+								<form action="/action_page.php" autocomplete="on" target=_top>
 									<input class="headerButton" type="submit" value="Log In">
-								</form>	
+								</form>		
 							</td>
 		  				</tr>
 		  			</table>
