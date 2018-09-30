@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>TheHut</title>
 		<link rel="stylesheet" href="stylesheets/template.css">
+		<link rel="stylesheet" href="stylesheets/film.css">
 		<link rel="tab icon" href="imgs/logo.png" type="image/x-icon"/>
 	</head>
 	
@@ -12,7 +13,7 @@
 
 			<div id="header">
 
-				<a href="file:///home/mesektet/siI/main.html">
+				<a href="./mainuser.html">
 					<img id="logo" src="imgs/logo.png" />
 				</a>
 					
@@ -23,7 +24,7 @@
 
 					<input class="searchGap" type="text" placeholder="  Type title, actor, director..."/>
 					<input class="categoryBox" type="text" placeholder="  Genre"/>
-					<form action="file:///home/mesektet/siI/search.html">
+					<form action="./searchuser.html">
 						<input class="searchButton" type="submit" value="Search"/>
 					</form>
 
@@ -34,32 +35,17 @@
 					<table>
 						<tr>
 							<td>Username:</td>
-							<td>
-								<form>
-									<input class="headerTextBox" type="text" name="uname">
-								</form>
-							</td>
+							<td>emilioriol</td>
 						</tr>
-
 						<tr>
-							<td>Password:</td>
-							<td>
-								<form action="/action_page.php" autocomplete="on" target=_top>
-									<input  class="headerTextBox" type="Password" name="pwd">
-								</form>
-							</td>
 						</tr>
-
 						<tr>
 							<td> 
 							</td>
 							<td id="buttonRow"> 						
-								<form action="file:///home/mesektet/siI/register.html" autocomplete="on" target=_top>
-									<input class="headerButton" type="submit" value="Register">
+								<form action="./main.html" autocomplete="on" target=_top>
+									<input class="headerButton" type="submit" value="Log Out">
 								</form>
-								<form action="#" autocomplete="on" target=_top>
-									<input class="headerButton" type="submit" value="Log In">
-								</form>		
 							</td>
 		  				</tr>
 		  			</table>
@@ -69,6 +55,10 @@
 			<div id="menuPane">
 
 				<ul class="menu">
+					<li class="clasifier"><span><p>My profile</p></span></li>
+					<li class="profile"><span><a href="#">Shopping Cart</a></span></li>
+					<li class="profile"><span><a href="#">Shopping History</a></span></li>
+					<li class="profile"><span><a href="#">My Data</a></span></li>
 					<li class="clasifier"><span><p>Genres</p></span></li>
 					<li class="genre"><span><a href="#">Acción</a></span></li>
 					<li class="genre"><span><a href="#">Ciencia ficción</a></span></li>
@@ -85,10 +75,25 @@
 			</div>
 
 
-			<div id=contentPane>
+			<div id="contentPane">
 
+				<div id="filmPane">
+					<div id="left">
+						<h1>Orphan</h1>
+						<img id="poster" src="imgs/orphan.jpg" /><br>
+						<table>
+							<tr>
+								<td><p><strong>Price: 3,50€</strong></p></td>
+								<td><button type="submit"><img src="imgs/carrito.png" alt="x" /></button></td>
+							</tr>	
+						</table>
+					</div>
 
-
+					<div id="right">
+						<h1>Sinopsis</h1>
+						<p>Orphan is a 2009 psychological horror film directed by Jaume Collet-Serra and written by David Leslie Johnson from a story by Alex Mace. The film stars Vera Farmiga, Peter Sarsgaard, Isabelle Fuhrman, C. C. H. Pounder and Jimmy Bennett. The plot centers on a couple who, after the death of their unborn child, adopt a mysterious 9-year-old girl. The film is an international co-production between the United States, Canada, Germany and France. It was produced by Joel Silver and Susan Downey of Dark Castle Entertainment, and Leonardo DiCaprio and Jennifer Davisson Killoran of Appian Way Productions.</p>
+					</div>
+				</div>
 			</div>
 
 			<div id="footer">

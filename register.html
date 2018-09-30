@@ -5,6 +5,7 @@
 		<title>TheHut</title>
 		<link rel="stylesheet" href="stylesheets/template.css">
 		<link rel="stylesheet" href="stylesheets/register.css">
+		<link rel="tab icon" href="imgs/logo.png" type="image/x-icon"/>
 	</head>
 	
 	<body>
@@ -12,7 +13,7 @@
 
 			<div id="header">
 
-				<a href="file:///home/mesektet/siI/main.html">
+				<a href="./main.html">
 					<img id="logo" src="imgs/logo.png" />
 				</a>
 					
@@ -23,7 +24,7 @@
 
 					<input class="searchGap" type="text" placeholder="  Type title, actor, director..."/>
 					<input class="categoryBox" type="text" placeholder="  Genre"/>
-					<form action="file:///home/mesektet/siI/search.html">
+					<form action="./search.html">
 						<input class="searchButton" type="submit" value="Search"/>
 					</form>
 
@@ -54,10 +55,10 @@
 							<td> 
 							</td>
 							<td id="buttonRow"> 						
-								<form action="file:///home/mesektet/siI/register.html" autocomplete="on" target=_top>
+								<form action="./register.html" autocomplete="on" target=_top>
 									<input class="headerButton" type="submit" value="Register">
 								</form>
-								<form action="/action_page.php" autocomplete="on" target=_top>
+								<form action="#" autocomplete="on" target=_top>
 									<input class="headerButton" type="submit" value="Log In">
 								</form>		
 							</td>
@@ -69,10 +70,6 @@
 			<div id="menuPane">
 
 				<ul class="menu">
-					<li class="clasifier"><span><p>My profile</p></span></li>
-					<li class="profile"><span><a href="#">Shopping Cart</a></span></li>
-					<li class="profile"><span><a href="#">Shopping History</a></span></li>
-					<li class="profile"><span><a href="#">My Data</a></span></li>
 					<li class="clasifier"><span><p>Genres</p></span></li>
 					<li class="genre"><span><a href="#">Acción</a></span></li>
 					<li class="genre"><span><a href="#">Ciencia ficción</a></span></li>
@@ -132,11 +129,13 @@
 						<tr>
 							<td> 
 							</td>
-							<td>
-								<form action="/action_page.php" autocomplete="on" target=_top>
+							<td id="buttonCell">
+								<form action="./main.html" autocomplete="on" target=_top>
 											<input class="cancelButton" type="submit" value="Cancel">
+								</form>
+								<form action="./mainuser.html" autocomplete="on" target=_top>
 											<input class="acceptButton" type="submit" value="Sign Up">
-										</form>
+								</form>
 							</td>	
 						</tr>
 					</table>

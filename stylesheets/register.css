@@ -74,6 +74,11 @@
 	font-size: 16px;
 }
 
+.user_information table tr #buttonCell{
+	display: flex;
+	flex-direction: row;
+}
+
 .cancelButton{
 	margin-top: 10px;
 	width: 120px;
