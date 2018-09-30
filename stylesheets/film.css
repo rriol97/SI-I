@@ -1,9 +1,8 @@
 
 #contentPane{
-	background: #858484;
 	margin-right: 0px;
 	margin-top: 120px;	
-	margin-left: 206px;
+	margin-left: 200px;
 	margin-bottom: 40px;
 
 	padding-right: 10px; 
@@ -17,56 +16,71 @@
 	align-content: center;
 
 	overflow-y: auto;
+}
+
+#filmPane{
+	position: relative;
+
+	margin-top: 5%;
+	margin-bottom: 20px;
+
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 5%;
+	padding-top: 5%;
+
+	background: #c8c6c6;
+
+
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center; 
+	align-content: center;
+	align-items: center;
+	
 }	
 
 #left{
-	float: left;
-	width: 40%;
-	height: 500px;
+	display: block;
+	align-content: center;
+	text-align: center;
+
+	padding-right: 100px; 
+
+
 }
 
 #left h1{
-	text-align: center;
 	font-size: 40px;
-	color:tomato;
+	color: tomato;
 	text-shadow:  3px 3px 3px black;
 }
 
-#left img{
-	margin-left: 25%;
+#left table tr td p{
+	padding-right: 20px;
+	padding-left: 20px;
 }
-#left input{
-	margin-left: 25%;
-}
-
-#left table{
-	margin-left: 15%
-}
-
-#left table td p{
-	font-size: 20px;
-}
-
 
 #left button{
-	width: 100px;
+	
 	height: 40px;
 	border: 1px solid black;
-	background: #c8c6c6;
-	margin-left: 25%;
+	border-radius: 8px 8px 8px 8px;
+	background: #46c3bd;
 	text-align: left;
 	font-size: 16px;
 	cursor: pointer;
 }	
 
 #right{
+	margin-top: 40px;
 	background: #c8c6c6;
-	margin-top: 5%;
-	float: left;
-	margin-left: 30px;
-	width: 50%;
 	border: 2px solid black;
-	height: 400px;
+	width: 600px;
 
 }
 
