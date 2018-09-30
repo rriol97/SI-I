@@ -1,23 +1,46 @@
 
 #contentPane{
-
 	margin-right: 0px;
 	margin-top: 120px;	
 	margin-left: 200px;
 	margin-bottom: 40px;
 
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: flex-start;
-	align-content: center;
+	padding-right: 10px; 
+	padding-left: 10px;
+	padding-top: 10px ;
+	padding-bottom: 10px;
+
+
+	display: block;
 }
 
+.contentRow{
+	display: block;
+}
+
+.contentRow h1{
+	padding-left: 20px;
+
+	color: #46c3bd;
+}
+
+.filmRow{
+	margin-bottom: 40px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	align-content: center;
+
+
+	overflow-x: auto;
+}
 
 .filmBox{
 	padding-top: 10px;
 	width: 240px;
 	height: 370px;
+
 
 	margin-left: 10px;
 	margin-right: 10px;
