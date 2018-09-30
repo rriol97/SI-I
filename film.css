@@ -1,0 +1,77 @@
+
+#contentPane{
+	margin-right: 0px;
+	margin-top: 120px;	
+	margin-left: 190px;
+	margin-bottom: 30px;
+
+	justify-content: center;
+	align-content: center;
+
+	background-color:#454444 ;
+
+	width: 86.45%;
+	height: 510px;
+}
+
+#left{
+	float: left;
+	width: 40%;
+	height: 500px;
+}
+
+#left h1{
+	text-align: center;
+	font-size: 40px;
+}
+
+#left img{
+	margin-left: 25%;
+}
+#left input{
+	margin-left: 25%;
+}
+
+#left table{
+	margin-left: 15%
+}
+
+#left table td p{
+	font-size: 20px;
+}
+
+
+#left button{
+	width: 100px;
+	height: 40px;
+	border: 1px solid black;
+	background: #c8c6c6;
+	margin-left: 25%;
+	text-align: left;
+	font-size: 16px;
+	cursor: pointer;
+}	
+
+#right{
+	background: #c8c6c6;
+	margin-top: 5%;
+	float: left;
+	margin-left: 30px;
+	width: 50%;
+	border: 2px solid black;
+	height: 400px;
+
+}
+
+#right h1{
+	margin-left: 5px;
+	text-align: left;
+	font-size: 30px;
+}
+
+#right p{
+	margin-left: 5px;
+	text-align:left;
+	font-size: 18px;
+}
+
