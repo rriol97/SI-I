@@ -12,6 +12,7 @@
 
 
 	display: block;
+	overflow-y: auto;
 }
 
 .contentRow{
