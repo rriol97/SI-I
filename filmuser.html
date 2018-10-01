@@ -1,11 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
+<!DOCTYPE HTML>
+<html  lang="es">
 	<head>
 		<meta charset="UTF-8">
 		<title>TheHut</title>
 		<link rel="stylesheet" href="stylesheets/template.css">
 		<link rel="stylesheet" href="stylesheets/film.css">
-		<link rel="tab icon" href="imgs/logo.png" type="image/x-icon"/>
+		<link rel="icon" href="imgs/logo.png" type="image/x-icon"/>
 	</head>
 	
 	<body>
@@ -14,7 +14,7 @@
 			<div id="header">
 
 				<a href="./mainuser.html">
-					<img id="logo" src="imgs/logo.png" />
+					<img id="logo" src="imgs/logo.png" alt="logo"/>
 				</a>
 					
 				<h1>the hut</h1>
@@ -38,6 +38,8 @@
 							<td>emilioriol</td>
 						</tr>
 						<tr>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td> 
@@ -55,11 +57,11 @@
 			<div id="menuPane">
 
 				<ul class="menu">
-					<li class="clasifier"><span><p>My profile</p></span></li>
+					<li class="clasifier"><span>My profile</span></li>
 					<li class="profile"><span><a href="#">Shopping Cart</a></span></li>
-					<li class="profile"><span><a href="#">Shopping History</a></span></li>
-					<li class="profile"><span><a href="#">My Data</a></span></li>
-					<li class="clasifier"><span><p>Genres</p></span></li>
+					<li class="profile"><span><a href="./shopping_history.html">Shopping History</a></span></li>
+					<li class="profile"><span><a href="./my_data.html">My Data</a></span></li>
+					<li class="clasifier"><span>Genres</span></li>
 					<li class="genre"><span><a href="#">Acción</a></span></li>
 					<li class="genre"><span><a href="#">Ciencia ficción</a></span></li>
 					<li class="genre"><span><a href="#">Comedia</a></span></li>
@@ -80,11 +82,15 @@
 				<div id="filmPane">
 					<div id="left">
 						<h1>Orphan</h1>
-						<img id="poster" src="imgs/orphan.jpg" /><br>
+						<img id="poster" src="imgs/orphan.jpg" alt="film" /><br>
 						<table>
 							<tr>
 								<td><p><strong>Price: 3,50€</strong></p></td>
-								<td><button type="submit"><img src="imgs/carrito.png" alt="x" /></button></td>
+								<td>
+									<form action="#">
+										<button type="submit"><img src="imgs/carrito.png" alt="x" /></button>
+									</form>
+								</td>
 							</tr>	
 						</table>
 					</div>

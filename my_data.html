@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>TheHut</title>
 		<link rel="stylesheet" href="stylesheets/template.css">
-		<link rel="stylesheet" href="stylesheets/shopping_history.css">
+		<link rel="stylesheet" href="stylesheets/my_data.css">
 		<link rel="icon" href="imgs/logo.png" type="image/x-icon"/>
 	</head>
 	
@@ -14,7 +14,7 @@
 			<div id="header">
 
 				<a href="./mainuser.html">
-					<img id="logo" src="imgs/logo.png" alt="logo"/>
+					<img id="logo" src="imgs/logo.png" alt="logo" />
 				</a>
 					
 				<h1>the hut</h1>
@@ -42,15 +42,17 @@
 							<td></td>
 						</tr>
 						<tr>
-							<td></td>
-							<td id="buttonRow"> 	
+							<td> 
+							</td>
+							<td id="buttonRow"> 						
 								<form action="./main.html" autocomplete="on" target=_top>
 									<input class="headerButton" type="submit" value="Log Out">
-								</form>	
+								</form>
 							</td>
 		  				</tr>
 		  			</table>
 		  		</div>
+
 		  	</div>
 
 			<div id="menuPane">
@@ -76,38 +78,68 @@
 			</div>
 
 
-			<div id="contentPane">
-				<div class="historypanel">
+			<div id=contentPane>
+				
 
-					<h1><strong>Shopping history</strong></h1>
-					<div class="history">
-						<table>
-							<tr>
-								<th>Date</th>
-								<th>Film</th>
-								<th>Amount</th>
-							</tr>
+				<div class=user_information>
 
-							<tr>
-								<td><p>01/10/2018</p></td>
-								<td><img class="film" src="imgs/monja.jpg" alt="film icon" /></td>
-								<td><p>18€</p></td>
-							</tr>
+					<h1>My data</h1>
 
-							<tr>
-								<td><p>30/09/2018</p></td>
-								<td><img class="film" src="imgs/ralph.jpg" alt="film icon"/></td>
-								<td><p>10€</p></td>
-							</tr>
-
-							<tr>
-								<td><p>27/09/2018</p></td>
-								<td><img class="film" src="imgs/renacido.jpg" alt="film icon" /></td>
-								<td><p>4€</p></td>
-							</tr>
-
-						</table>
-					</div>
+					<table>
+						<tr>
+							<td><p class="label">Username:</p></td>
+							<td> 
+								<form>
+									<input class="textBox" type="text" name="username">
+								</form>
+							</td>
+							<td>
+								<form action="#" autocomplete="on" target=_top>
+											<input class="editButton" type="submit" value="Edit">
+								</form>
+							</td>
+						</tr>
+						<tr>
+							<td>Password:</td>
+							<td>
+								<form action="/action_page.php" autocomplete="on" target=_top>
+									<input  class="textBox" type="Password" name="pwd">
+								</form>
+							</td>
+							<td>
+								<form action="#" autocomplete="on" target=_top>
+											<input class="editButton" type="submit" value="Edit">
+								</form>
+							</td>
+						</tr>
+						<tr>
+							<td><p class="label">Credit Card:</p></td>
+							<td>
+								<form>
+									<input class="textBox" type="text" name="ccard">
+								</form>		
+							</td>
+							<td>
+								<form action="#" autocomplete="on" target=_top>
+											<input class="editButton" type="submit" value="Edit">
+								</form>
+							</td>
+						</tr>
+						<tr>
+							<td><p class="label">E-mail:</p></td>
+							<td>
+								<form>
+									<input class="textBox" type="text" name="email">
+								</form>
+							</td>
+							<td>
+								<form action="#" autocomplete="on" target=_top>
+											<input class="editButton" type="submit" value="Edit">
+								</form>
+							</td>
+						</tr>
+					</table>
+				
 
 				</div>
 			</div>
@@ -120,4 +152,3 @@
 
 
 </html>	
-

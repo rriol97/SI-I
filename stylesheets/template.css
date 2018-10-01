@@ -21,7 +21,6 @@ body{
 	left: 0;
 	border-style: solid;
 	border-color:  #000000;
-	font-style: bold;
 	display: inline-flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -106,7 +105,6 @@ body{
 
 #header table{
 	border-spacing: 8px 2px;
-	align-items: right;
 	float: right;
 	clear: right;
 	margin-right: 10px;
@@ -125,7 +123,6 @@ body{
 }
 
 .headerButton{
-	align-self: right;
 	width: 80px
 }
 
@@ -175,7 +172,7 @@ ul li.clasifier{
 	background-color: #46c3bd;
 	border-top: 0.2px solid black;
 	border-bottom: 0.2px solid black;
-
+	vertical-align: center;
 }
 
 ul li span p{
@@ -211,7 +208,6 @@ ul li.genre:hover{
 	left: 0;
 	border-style: solid;
 	border-color:  #000000;
-	font-style: bold;
 	vertical-align: middle;
 	text-align: center;
 	clear:both;
