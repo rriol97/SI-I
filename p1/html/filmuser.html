@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>TheHut</title>
-		<link rel="stylesheet" href="stylesheets/template.css">
-		<link rel="icon" href="imgs/logo.png" type="image/x-icon"/>
+		<link rel="stylesheet" href="../stylesheets/template.css">
+		<link rel="icon" href="../imgs/logo.png" type="image/x-icon"/>
 	</head>
 	
 	<body>
@@ -12,8 +12,8 @@
 
 			<div id="header">
 
-				<a href="./main.html">
-					<img id="logo" src="imgs/logo.png" alt="logo"/>
+				<a href="./indexuser.html">
+					<img id="logo" src="../imgs/logo.png" alt="logo"/>
 				</a>
 					
 				<h1>the hut</h1>
@@ -23,7 +23,7 @@
 
 					<input class="searchGap" type="text" placeholder="  Type title, actor, director..."/>
 					<input class="categoryBox" type="text" placeholder="  Genre"/>
-					<form action="./search.html">
+					<form action="./searchuser.html">
 						<input class="searchButton" type="submit" value="Search"/>
 					</form>
 
@@ -34,32 +34,19 @@
 					<table>
 						<tr>
 							<td>Username:</td>
-							<td>
-								<form>
-									<input class="headerTextBox" type="text" name="uname">
-								</form>
-							</td>
+							<td>emilioriol</td>
 						</tr>
-
 						<tr>
-							<td>Password:</td>
-							<td>
-								<form action="/action_page.php" autocomplete="on" target=_top>
-									<input  class="headerTextBox" type="Password" name="pwd">
-								</form>
-							</td>
+							<td></td>
+							<td></td>
 						</tr>
-
 						<tr>
 							<td> 
 							</td>
 							<td id="buttonRow"> 						
-								<form action="./register.html" autocomplete="on" target=_top>
-									<input class="headerButton" type="submit" value="Register">
+								<form action="./index.html" autocomplete="on" target=_top>
+									<input class="headerButton" type="submit" value="Log Out">
 								</form>
-								<form action="./filmuser.html" autocomplete="on" target=_top>
-									<input class="headerButton" type="submit" value="Log In">
-								</form>		
 							</td>
 		  				</tr>
 		  			</table>
@@ -69,6 +56,10 @@
 			<div id="menuPane">
 
 				<ul class="menu">
+					<li class="clasifier"><span>My profile</span></li>
+					<li class="profile"><span><a href="#">Shopping Cart</a></span></li>
+					<li class="profile"><span><a href="./shopping_history.html">Shopping History</a></span></li>
+					<li class="profile"><span><a href="./my_data.html">My Data</a></span></li>
 					<li class="clasifier"><span>Genres</span></li>
 					<li class="genre"><span><a href="#">Action</a></span></li>
 					<li class="genre"><span><a href="#">Science fiction</a></span></li>
@@ -90,13 +81,13 @@
 				<div id="filmPane">
 					<div id="left">
 						<h1>Orphan</h1>
-						<img id="poster" src="imgs/orphan.jpg" alt="film" /><br>
+						<img id="poster" src="../imgs/orphan.jpg" alt="film" /><br>
 						<table>
 							<tr>
 								<td><p><strong>Price: 3,50€</strong></p></td>
 								<td>
-									<form action="./register.html">
-										<button type="submit"><img src="imgs/carrito.png" alt="x" /></button>
+									<form action="#">
+										<button type="submit"><img src="../imgs/carrito.png" alt="x" /></button>
 									</form>
 								</td>
 							</tr>	

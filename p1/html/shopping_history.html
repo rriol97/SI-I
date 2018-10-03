@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>TheHut</title>
-		<link rel="stylesheet" href="stylesheets/template.css">
-		<link rel="icon" href="imgs/logo.png" type="image/x-icon"/>
+		<link rel="stylesheet" href="../stylesheets/template.css">
+		<link rel="icon" href="../imgs/logo.png" type="image/x-icon"/>
 	</head>
 	
 	<body>
@@ -12,8 +12,8 @@
 
 			<div id="header">
 
-				<a href="./main.html">
-					<img id="logo" src="imgs/logo.png" alt="logo" />
+				<a href="./indexuser.html">
+					<img id="logo" src="../imgs/logo.png" alt="logo"/>
 				</a>
 					
 				<h1>the hut</h1>
@@ -23,7 +23,7 @@
 
 					<input class="searchGap" type="text" placeholder="  Type title, actor, director..."/>
 					<input class="categoryBox" type="text" placeholder="  Genre"/>
-					<form action="./search.html">
+					<form action="./searchuser.html">
 						<input class="searchButton" type="submit" value="Search"/>
 					</form>
 
@@ -41,12 +41,11 @@
 							<td></td>
 						</tr>
 						<tr>
-							<td> 
-							</td>
-							<td id="buttonRow"> 						
-								<form action="./main.html" autocomplete="on" target=_top>
+							<td></td>
+							<td id="buttonRow"> 	
+								<form action="./index.html" autocomplete="on" target=_top>
 									<input class="headerButton" type="submit" value="Log Out">
-								</form>
+								</form>	
 							</td>
 		  				</tr>
 		  			</table>
@@ -76,10 +75,40 @@
 			</div>
 
 
-			<div id=contentPane>
+			<div id="contentPane">
+				<div class="historypanel">
 
+					<h1><strong>Shopping history</strong></h1>
+					<div class="history">
+						<table>
+							<tr>
+								<th>Date</th>
+								<th>Film</th>
+								<th>Amount</th>
+							</tr>
 
+							<tr>
+								<td><p>01/10/2018</p></td>
+								<td><img class="film" src="../imgs/monja.jpg" alt="film icon" /></td>
+								<td><p>18€</p></td>
+							</tr>
 
+							<tr>
+								<td><p>30/09/2018</p></td>
+								<td><img class="film" src="../imgs/ralph.jpg" alt="film icon"/></td>
+								<td><p>10€</p></td>
+							</tr>
+
+							<tr>
+								<td><p>27/09/2018</p></td>
+								<td><img class="film" src="../imgs/renacido.jpg" alt="film icon" /></td>
+								<td><p>4€</p></td>
+							</tr>
+
+						</table>
+					</div>
+
+				</div>
 			</div>
 
 			<div id="footer">

@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>TheHut</title>
-		<link rel="stylesheet" href="stylesheets/template.css">
-		<link rel="icon" href="imgs/logo.png" type="image/x-icon"/>
+		<link rel="stylesheet" href="../stylesheets/template.css">
+		<link rel="icon" href="../imgs/logo.png" type="image/x-icon"/>
 	</head>
 	
 	<body>
@@ -12,8 +12,8 @@
 
 			<div id="header">
 
-				<a href="./mainuser.html">
-					<img id="logo" src="imgs/logo.png" alt="logo" />
+				<a href="./index.html">
+					<img id="logo" src="../imgs/logo.png" alt="logo"/>
 				</a>
 					
 				<h1>the hut</h1>
@@ -24,7 +24,7 @@
 					<input class="searchGap" type="text" placeholder="  Type title, actor, director..."/>
 					<input class="categoryBox" type="text" placeholder="  Genre"/>
 					
-					<form action="./searchuser.html">
+					<form action="./search.html">
 						<input class="searchButton" type="submit" value="Search"/>
 					</form>
 
@@ -35,18 +35,32 @@
 					<table>
 						<tr>
 							<td>Username:</td>
-							<td>emilioriol</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td id="buttonRow"> 						
-								<form action="./main.html" autocomplete="on" target=_top>
-									<input class="headerButton" type="submit" value="Log Out">
+							<td>
+								<form>
+									<input class="headerTextBox" type="text" name="uname">
 								</form>
+							</td>
+						</tr>
+
+						<tr>
+							<td>Password:</td>
+							<td>
+								<form action="/action_page.php" autocomplete="on" target=_top>
+									<input  class="headerTextBox" type="Password" name="pwd">
+								</form>
+							</td>
+						</tr>
+
+						<tr>
+							<td> 
+							</td>
+							<td id="buttonRow"> 						
+								<form action="./register.html" autocomplete="on" target=_top>
+									<input class="headerButton" type="submit" value="Register">
+								</form>
+								<form action="./indexuser.html" autocomplete="on" target=_top>
+									<input class="headerButton" type="submit" value="Log In">
+								</form>		
 							</td>
 		  				</tr>
 		  			</table>
@@ -56,10 +70,6 @@
 			<div id="menuPane">
 
 				<ul class="menu">
-					<li class="clasifier"><span>My profile</span></li>
-					<li class="profile"><span><a href="#">Shopping Cart</a></span></li>
-					<li class="profile"><span><a href="./shopping_history.html">Shopping History</a></span></li>
-					<li class="profile"><span><a href="./my_data.html">My Data</a></span></li>
 					<li class="clasifier"><span>Genres</span></li>
 					<li class="genre"><span><a href="#">Action</a></span></li>
 					<li class="genre"><span><a href="#">Science fiction</a></span></li>
@@ -87,92 +97,92 @@
 						<div class="filmRow">
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/alicia.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/alicia.jpg"  alt="filmIcon" />
 									<p>Alicia in wonderland</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/alpha.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/alpha.jpg" alt="filmIcon" />
 									<p>Alpha</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/casino.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/casino.jpg" alt="filmIcon" />
 									<p>Casino Royal</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/django.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/django.jpg" alt="filmIcon" />
 									<p>Django Unchained</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/crobin.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/crobin.jpg" alt="filmIcon" />
 									<p>Cristopher Robin</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/divergente.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/divergente.jpg" alt="filmIcon" />
 									<p>Divergent</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/increibles.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/increibles.jpg" alt="filmIcon" />
 									<p>Incredibles 2</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/monja.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/monja.jpg" alt="filmIcon" />
 									<p>The nun</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/orfanato.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/orfanato.jpg" alt="filmIcon" />
 									<p>The orphanage</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/orphan.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/orphan.jpg" alt="filmIcon" />
 									<p>The orphan</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/ralph.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/ralph.jpg" alt="filmIcon" />
 									<p>Wreck It Ralph 2!</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/renacido.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/renacido.jpg" alt="filmIcon" />
 									<p>The revenant</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
-								<a href="./filmuser.html">
-									<img class="filmIcon" src="imgs/origen.jpg" alt="filmIcon" />
+								<a href="./film.html">
+									<img class="filmicon" src="../imgs/origen.jpg" alt="filmIcon" />
 									<p>Origin</p>
 								</a>
 							</div>
@@ -190,91 +200,91 @@
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/alicia.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/alicia.jpg" alt="filmIcon" />
 									<p>Alicia in wonderland</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/alpha.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/alpha.jpg" alt="filmIcon" />
 									<p>Alpha</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/casino.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/casino.jpg" alt="filmIcon" />
 									<p>Casino Royal</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/django.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/django.jpg" alt="filmIcon" />
 									<p>Django Unchained</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/crobin.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/crobin.jpg" alt="filmIcon" />
 									<p>Cristopher Robin</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/divergente.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/divergente.jpg" alt="filmIcon" />
 									<p>Divergent</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/increibles.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/increibles.jpg" alt="filmIcon" />
 									<p>Incredibles 2</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/monja.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/monja.jpg" alt="filmIcon" />
 									<p>The nun</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/orfanato.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/orfanato.jpg" alt="filmIcon" />
 									<p>The orphanage</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/orphan.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/orphan.jpg" alt="filmIcon" />
 									<p>The orphan</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/ralph.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/ralph.jpg" alt="filmIcon" />
 									<p>Wreck It Ralph 2!</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/renacido.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/renacido.jpg" alt="filmIcon" />
 									<p>The revenant</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/origen.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/origen.jpg" alt="filmIcon" />
 									<p>Origin</p>
 								</a>
 							</div>
@@ -292,91 +302,91 @@
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/alicia.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/alicia.jpg" alt="filmIcon" />
 									<p>Alicia in wonderland</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/alpha.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/alpha.jpg" alt="filmIcon" />
 									<p>Alpha</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/casino.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/casino.jpg" alt="filmIcon" />
 									<p>Casino Royal</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/django.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/django.jpg" alt="filmIcon" />
 									<p>Django Unchained</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/crobin.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/crobin.jpg" alt="filmIcon" />
 									<p>Cristopher Robin</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/divergente.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/divergente.jpg" alt="filmIcon" />
 									<p>Divergent</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/increibles.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/increibles.jpg" alt="filmIcon" />
 									<p>Incredibles 2</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/monja.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/monja.jpg" alt="filmIcon" />
 									<p>The nun</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/orfanato.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/orfanato.jpg" alt="filmIcon" />
 									<p>The orphanage</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/orphan.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/orphan.jpg" alt="filmIcon" />
 									<p>The orphan</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/ralph.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/ralph.jpg" alt="filmIcon" />
 									<p>Wreck It Ralph 2!</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/renacido.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/renacido.jpg" alt="filmIcon" />
 									<p>The revenant</p>
 								</a>
 							</div>
 
 							<div class="filmBox">
 								<a href="#">
-									<img class="filmIcon" src="imgs/origen.jpg" alt="filmIcon" />
+									<img class="filmicon" src="../imgs/origen.jpg" alt="filmIcon" />
 									<p>Origin</p>
 								</a>
 							</div>
