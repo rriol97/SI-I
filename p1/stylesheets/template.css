@@ -434,7 +434,9 @@ ul li.genre:hover{
 	width: 300px; 
 }
 
-.user_information table tr td p{
+.user_information table tr td p{ 
+	margin-left: 10px;
+	padding-right: 50px;
 	width: 200px;
 	font-size: 16px;
 }
