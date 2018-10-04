@@ -1,0 +1,267 @@
+{
+	'peliculas':[
+		{
+			"titulo": "Alice in Wonderland",
+			"poster": "imgs/alicia.jpg",
+			"director": "Tim Burton",
+			"precio": 5.5,
+			"categoria": "Fantasy",
+			"anno": 2010,
+			"actores": [
+				{
+				"nombre": "Johnny Depp",
+				"personaje": "Mad Hatter",
+				},
+				{
+				"nombre": "Mia Wasikowska",
+				"personaje": "Alice Kingsleigh",
+				}
+			]
+		},
+		{
+			"titulo": "Alpha",
+			"poster": "imgs/alpha.jpg",
+			"director": "Albert Hughes",
+			"precio": 18,
+			"categoria": "Action",
+			"anno": 2018,
+			"actores": [
+				{
+				"nombre": "Kodi Smit-McPhee",
+				"personaje": "Kedo",
+				},
+				{
+				"nombre": "Leonor Varela",
+				"personaje": "Shaman",
+				},
+				{
+				"nombre": "Jens Hulten",
+				"personaje": "Xi",
+				}
+			]
+		},
+		{
+			"titulo": "Casino Royale",
+			"poster": "imgs/casino.jpg",
+			"director": "Martin Campbell",
+			"precio": 10,
+			"categoria": "Action",
+			"anno": 2006,
+			"actores": [
+				{
+				"nombre": "Daniel Craig",
+				"personaje": "James Bond (007)",
+				},
+				{
+				"nombre": "Eva Green",
+				"personaje": "Vesper Lynd",
+				},
+				{
+				"nombre": "Mads Mikkelsen",
+				"personaje": "Le Chifre",
+				}
+			]
+		},
+		{
+			"titulo": "Christopher Robin",
+			"poster": "imgs/crobin.jpg",
+			"director": "Mark Foster",
+			"precio": 15,
+			"categoria": "Fantasy",
+			"anno": 2018,
+			"actores": [
+				{
+				"nombre": "Ewan McGregor",
+				"personaje": "Christopher Robin",
+				},
+				{
+				"nombre": "Hayley Atwell",
+				"personaje": "Evelyn Robin",
+				},
+			]
+		},
+		{
+			"titulo": "Divergente",
+			"poster": "imgs/divergente.jpg",
+			"director": "Neil Burger",
+			"precio": 2,
+			"categoria": "Science fiction",
+			"anno": 2014,
+			"actores": [
+				{
+				"nombre": "Shailene Diann Woodley",
+				"personaje": "Beatrice Prior",
+				},
+				{
+				"nombre": "Theo James",
+				"personaje": "Tobisd Eaton",
+				},
+			]
+		},
+
+		{
+			"titulo": "Django Unchained",
+			"poster": "imgs/django.jpg",
+			"director": "Quenting Tarantino",
+			"precio": 2,
+			"categoria": "Action",
+			"anno": 2012,
+			"actores": [
+				{
+				"nombre": "Jamie Foxx",
+				"personaje": "Django",
+				},
+				{
+				"nombre": "Christoph Waltz",
+				"personaje": "Dr.King Schultz",
+				},
+				{
+				"nombre": "Leonardo DiCaprio",
+				"personaje": "Calvin J.Candie",
+				},
+				{
+				"nombre": "Samuel L. Jackson",
+				"personaje": "Stephen",
+				},
+			]
+		},
+		{
+			"titulo": "The Incredibles 2",
+			"poster": "imgs/increibles.jpg",
+			"director": "Brad Bird",
+			"precio": 20,
+			"categoria": "Action",
+			"anno": 2018,
+			"actores": [
+				{
+				"nombre": "Holly Hunter",
+				"personaje": "Helen Parr",
+				},
+				{
+				"nombre": "Craig T. Nelson",
+				"personaje": "Bob Parr",
+				},
+				{
+				"nombre": "Samuel L. Jackson",
+				"personaje": "Lucius Best",
+				}
+			]
+		},
+		{
+			"titulo": "The Nun",
+			"poster": "imgs/monja.jpg",
+			"director": "Corin Hardy",
+			"precio": 20,
+			"categoria": "Thriller",
+			"anno": 2018,
+			"actores": [
+				{
+				"nombre": "Demian Bichir",
+				"personaje": "Burque the Priest",
+				},
+				{
+				"nombre": "Taissa Farmiga",
+				"personaje": "Irene the Nun",
+				},
+			]
+		},
+		{
+			"titulo": "The Orphanage",
+			"poster": "imgs/orfanato.jpg",
+			"director": "Juan Antonio Bayona",
+			"precio": 4,
+			"categoria": "Thriller",
+			"anno": 2007,
+			"actores": [
+				{
+				"nombre": "Belen Rueda",
+				"personaje": "Laura",
+				},
+				{
+				"nombre": "Fernando Cayo",
+				"personaje": "Carlos",
+				},
+			]
+		},
+		{
+			"titulo": "Orphan",
+			"poster": "imgs/orphan.jpg",
+			"director": "Jaume Collet-Serra",
+			"precio": 5,
+			"categoria": "Thriller",
+			"anno": 2009,
+			"actores": [
+				{
+				"nombre": "Isabelle Fuhrman",
+				"personaje": "Esther",
+				},
+				{
+				"nombre": "Vera Farmiga",
+				"personaje": "Kate Coleman",
+				},
+			]
+		},
+		{
+			"titulo": "Wreck It Ralph 2!",
+			"poster": "imgs/ralph.jpg",
+			"director": "Rich Moore",
+			"precio": 15,
+			"categoria": "Fantasy",
+			"anno": 2018,
+			"actores": [
+				{
+				"nombre": "Jon C. Reilly",
+				"personaje": "Ralph",
+				},
+				{
+				"nombre": "Sara Silverman",
+				"personaje": "Vanellope",
+				},
+			]
+		},
+		{
+			"titulo": "The Revenant",
+			"poster": "imgs/renacido.jpg",
+			"director": "Alejandro González Iñárritu",
+			"precio": 10,
+			"categoria": "Drama",
+			"anno": 2015,
+			"actores": [
+				{
+				"nombre": "Leonardo DiCaprio",
+				"personaje": "Hugh Glass",
+				},
+				{
+				"nombre": "Tom Hardy",
+				"personaje": "John Fitzgerald",
+				},
+			]
+		},
+
+	]
+}
+
+
+Alpha
+
+Casino Royale
+
+Cristopher Robin
+
+Divergente
+
+Django Unchained
+
+The Incredibles 2
+
+The Nun
+
+The Orphanage
+
+Origin
+
+Orphan 
+
+Wreck It Ralph 2!
+
+The Revenant
