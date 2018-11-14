@@ -47,6 +47,77 @@ ALTER TABLE orderdetail ADD CONSTRAINT orderdetail_pkey PRIMARY KEY (orderid,pro
 ALTER TABLE orderdetail ADD FOREIGN KEY (orderid) REFERENCES orders(orderid);
 ALTER TABLE orderdetail ADD FOREIGN KEY (prod_id) REFERENCES products(prod_id);
 
+
+-- Apartado b: Cohesion de lenguajes, generos y paises.
+
+--Languages
+SELECT ROW_NUMBER() OVER (ORDER BY language) as lan_id, language
+INTO languages
+FROM (SELECT DISTINCT language
+      FROM IMDB_movielanguages) as languages;
+
+ALTER TABLE languages ADD CONSTRAINT languages_pkey PRIMARY KEY (lan_id);
+
+SELECT movieid, lan_id
+INTO imdb_movielanguagesAux
+FROM imdb_movielanguages NATURAL JOIN languages
+GROUP BY movieid, lan_id;
+
+DROP TABLE imdb_movielanguages;
+ALTER TABLE imdb_movielanguagesAux RENAME TO imdb_movielanguages;
+ALTER TABLE imdb_movielanguages ADD CONSTRAINT imdb_movielanguages_pkey PRIMARY KEY (movieid, lan_id);
+
+-- Anadimos claves foraneas 
+ALTER TABLE imdb_movielanguages ADD FOREIGN KEY (movieid) REFERENCES IMDB_movies(movieid);
+ALTER TABLE imdb_movielanguages ADD FOREIGN KEY (lan_id) REFERENCES languages(lan_id);
+
+
+--Generos
+SELECT ROW_NUMBER() OVER (ORDER BY genre) as genre_id, genre
+INTO genres
+FROM (SELECT DISTINCT genre
+      FROM IMDB_moviegenres) as genres;
+
+ALTER TABLE genres ADD CONSTRAINT genres_pkey PRIMARY KEY (genre_id);
+
+SELECT movieid, genre_id
+INTO imdb_moviegenresAux
+FROM imdb_moviegenres NATURAL JOIN genres
+GROUP BY movieid, genre_id;
+
+DROP TABLE imdb_moviegenres;
+ALTER TABLE imdb_moviegenresAux RENAME TO imdb_moviegenres;
+ALTER TABLE imdb_moviegenres ADD CONSTRAINT imdb_moviegenres_pkey PRIMARY KEY (movieid, genre_id);
+
+-- Anadimos claves foraneas 
+ALTER TABLE imdb_moviegenres ADD FOREIGN KEY (movieid) REFERENCES IMDB_movies(movieid);
+ALTER TABLE imdb_moviegenres ADD FOREIGN KEY (genre_id) REFERENCES genres(genre_id);
+
+
+--Paises
+SELECT ROW_NUMBER() OVER (ORDER BY country) as country_id, country
+INTO countries
+FROM (SELECT DISTINCT country
+      FROM IMDB_moviecountries) as countries;
+
+ALTER TABLE countries ADD CONSTRAINT countries_pkey PRIMARY KEY (country_id);
+
+SELECT movieid, country_id
+INTO imdb_moviecountriesAux
+FROM imdb_moviecountries NATURAL JOIN countries
+GROUP BY movieid, country_id;
+
+DROP TABLE imdb_moviecountries;
+ALTER TABLE imdb_moviecountriesAux RENAME TO imdb_moviecountries;
+ALTER TABLE imdb_moviecountries ADD CONSTRAINT imdb_moviecountries_pkey PRIMARY KEY (movieid, country_id);
+
+-- Anadimos claves foraneas 
+ALTER TABLE imdb_moviecountries ADD FOREIGN KEY (movieid) REFERENCES IMDB_movies(movieid);
+ALTER TABLE imdb_moviecountries ADD FOREIGN KEY (country_id) REFERENCES countries(country_id);
+
+
+
+
  
 
 
