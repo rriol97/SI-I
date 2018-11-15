@@ -51,10 +51,10 @@ ALTER TABLE orderdetail ADD FOREIGN KEY (prod_id) REFERENCES products(prod_id);
 -- Apartado b: Cohesion de lenguajes, generos y paises.
 
 --Languages
-SELECT ROW_NUMBER() OVER (ORDER BY language) as lan_id, language
+SELECT ROW_NUMBER() OVER (ORDER BY language) AS lan_id, language
 INTO languages
 FROM (SELECT DISTINCT language
-      FROM IMDB_movielanguages) as languages;
+      FROM IMDB_movielanguages) AS languages;
 
 ALTER TABLE languages ADD CONSTRAINT languages_pkey PRIMARY KEY (lan_id);
 
@@ -73,10 +73,10 @@ ALTER TABLE imdb_movielanguages ADD FOREIGN KEY (lan_id) REFERENCES languages(la
 
 
 --Generos
-SELECT ROW_NUMBER() OVER (ORDER BY genre) as genre_id, genre
+SELECT ROW_NUMBER() OVER (ORDER BY genre) AS genre_id, genre
 INTO genres
 FROM (SELECT DISTINCT genre
-      FROM IMDB_moviegenres) as genres;
+      FROM IMDB_moviegenres) AS genres;
 
 ALTER TABLE genres ADD CONSTRAINT genres_pkey PRIMARY KEY (genre_id);
 
@@ -95,10 +95,10 @@ ALTER TABLE imdb_moviegenres ADD FOREIGN KEY (genre_id) REFERENCES genres(genre_
 
 
 --Paises
-SELECT ROW_NUMBER() OVER (ORDER BY country) as country_id, country
+SELECT ROW_NUMBER() OVER (ORDER BY country) AS country_id, country
 INTO countries
 FROM (SELECT DISTINCT country
-      FROM IMDB_moviecountries) as countries;
+      FROM IMDB_moviecountries) AS countries;
 
 ALTER TABLE countries ADD CONSTRAINT countries_pkey PRIMARY KEY (country_id);
 
@@ -114,6 +114,10 @@ ALTER TABLE imdb_moviecountries ADD CONSTRAINT imdb_moviecountries_pkey PRIMARY 
 -- Anadimos claves foraneas 
 ALTER TABLE imdb_moviecountries ADD FOREIGN KEY (movieid) REFERENCES IMDB_movies(movieid);
 ALTER TABLE imdb_moviecountries ADD FOREIGN KEY (country_id) REFERENCES countries(country_id);
+
+
+-- Anadimos la tabla "alertas", necesaria para updInventory()
+CREATE TABLE IF NOT EXISTS alertas (time timestamp, prodid int, msg text);
 
 
 
