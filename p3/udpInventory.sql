@@ -9,22 +9,24 @@ FOR prod IN SELECT prod_id, stock, sales, quantity
 	    FROM orders NATURAL JOIN orderdetail NATURAL JOIN products
 	    WHERE orderid = OLD.orderid
 LOOP
-	IF prod.stock > prod.quantity THEN
-		UPDATE products
-		SET    stock = prod.stock-prod.quantity,
-		       sales = prod.sales+prod.quantity
-		WHERE products.prod_id= prod.prod_id;
-	ELSIF prod.stock = prod.quantity THEN 
-		-- EL stock se queda en 0, hay que anadir tambien alarma
-		UPDATE products
-		SET    stock = prod.stock-prod.quantity,
-		       sales = prod.sales+prod.quantity
-		WHERE products.prod_id= prod.prod_id;
+
+	UPDATE products
+	SET    stock = prod.stock-prod.quantity,
+	       sales = prod.sales+prod.quantity
+	WHERE products.prod_id= prod.prod_id;
+
+	IF prod.stock = prod.quantity THEN 
+		-- El stock se queda en 0, hay que anadir tambien alarma
+		
 		-- EL stock se queda en 0, hay que anadir tambien alarma
 		INSERT INTO alertas VALUES  (current_timestamp, prod.prod_id, 'El stock se ha quedado en 0');
 		
 	ELSE
-		RAISE EXCEPTION 'No hay suficiente stock para el producto %.', prod.prod_id;
+		-- En este caso el stock seria inferior a 0.
+		-- Hemos concluido que es razonable admitir esto para evitar problemas con comprar concurrentes o muy seguidas.
+		-- El funcionamiento es igual que en el caso anterior pero cambianod ligeramente el mensaje.
+
+		INSERT INTO alertas VALUES  (current_timestamp, prod.prod_id, 'El stock esta por debajo de 0, recordamos comprar inventario.');
 	END IF;
 
 END LOOP;
