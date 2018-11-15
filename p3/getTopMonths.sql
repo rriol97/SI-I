@@ -6,11 +6,11 @@ BEGIN
 	RETURN QUERY 
 		SELECT cast(date_part('year',orderdate) as integer) as year, 
 		       cast(date_part('month',orderdate) as integer) as month,
-		       sum(totalamount) as amount,
+		       sum(price*quantity) as amount,
 		       sum(quantity) as numProducts
 		FROM orders NATURAL JOIN orderdetail
 		GROUP BY year, month
-		HAVING sum(totalamount) > totamountbound  OR sum(quantity) > prodBound;
+		HAVING sum(price*quantity) > totamountbound  OR sum(quantity) > prodBound;
 END; $$ 
 LANGUAGE plpgsql;
 
