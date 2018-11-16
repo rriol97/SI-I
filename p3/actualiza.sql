@@ -121,11 +121,11 @@ CREATE TABLE IF NOT EXISTS alertas (time timestamp, prodid int, msg text);
 
 --Creamos view para apartado e
 CREATE VIEW TopVentas AS 
-	SELECT extract(year FROM orders.orderdate) AS anyo, imdb_movies.movietitle, count(orderdetail.orderid) AS ventas
+	SELECT extract(year FROM orders.orderdate) AS anyo, imdb_movies.movieid, sum(cast(orderdetail.quantity as integer)) AS ventas
 	FROM imdb_movies, products, orderdetail, orders
 	WHERE imdb_movies.movieid = products.movieid AND products.prod_id = orderdetail.prod_id and orders.orderid = orderdetail.orderid
-	GROUP BY anyo, imdb_movies.movietitle
-	ORDER BY ventas DESC;
+	GROUP BY anyo, imdb_movies.movieid
+	ORDER BY anyo DESC;
 
 
 
