@@ -128,11 +128,6 @@ CREATE VIEW TopVentas AS
 	ORDER BY anyo DESC;
 
 
---Modificamos la tabla orders para hacerla igual que en nuestro diagrama
-ALTER TABLE orders DROP netamount;
-ALTER TABLE orders DROP tax;
-UPDATE orders SET totalamount=0;
-
 
 
 
