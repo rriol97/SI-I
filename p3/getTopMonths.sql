@@ -15,4 +15,4 @@ END; $$
 LANGUAGE plpgsql;
 
 SELECT * 
-FROM getTopMonths(19000,320000);
+FROM getTopMonths(1900,7000000);

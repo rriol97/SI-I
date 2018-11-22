@@ -1,5 +1,55 @@
 -- Actualizaciones de la base de datos
 
+-- Modificaciones en la tabla customers:
+
+-- Queremos que username sea la clave primaria de customers. 
+-- Para ello, eliminamos todos los registros en los que username es NULL, ademas de todas aquellas columnas que no nos interesan.
+-- Posteriormente es necesario modificar la tabla orders para que referencie a customers bien aun despues de la modificacion anterior.
+-- (Esto es, cambiar columna customer id por username). 
+
+ALTER TABLE customers DROP firstname;
+ALTER TABLE customers DROP lastname;
+ALTER TABLE customers DROP address1;
+ALTER TABLE customers DROP address2;
+ALTER TABLE customers DROP city;
+ALTER TABLE customers DROP state;
+ALTER TABLE customers DROP zip;
+ALTER TABLE customers DROP country;
+ALTER TABLE customers DROP region;
+ALTER TABLE customers DROP phone;
+ALTER TABLE customers DROP creditcardtype;
+ALTER TABLE customers DROP creditcardexpiration;
+ALTER TABLE customers DROP age;
+ALTER TABLE customers DROP gender;
+
+SELECT *
+INTO customersAux
+FROM(SELECT min(customerid) as customerid, username
+	FROM customers
+	GROUP BY username) as foo NATURAL JOIN customers;
+
+DROP TABLE customers;
+ALTER TABLE customersAux RENAME TO customers;
+
+ALTER TABLE customers ADD CONSTRAINT customers_pkey PRIMARY KEY (username);
+ALTER TABLE customers ALTER COLUMN email SET NOT NULL;
+ALTER TABLE customers ALTER COLUMN creditcard SET NOT NULL;
+ALTER TABLE customers ALTER COLUMN password SET NOT NULL;
+
+-- Modificamos orders para que trabaje con username
+ALTER TABLE orders ADD username varchar(50);
+
+UPDATE orders SET username = foo.username
+FROM (SELECT customerid, username 
+	FROM customers) AS foo
+WHERE foo.customerid = orders.customerid;
+
+DELETE FROM orders WHERE username IS NULL;
+ALTER TABLE orders ADD FOREIGN KEY (username) REFERENCES customers(username);
+
+ALTER TABLE customers DROP customerid;
+ALTER TABLE orders DROP customerid;
+
 --Eliminamos la columna numparticipation de la tabla imdb_actormovies
 ALTER TABLE imdb_actormovies DROP CONSTRAINT imdb_actormovies_pkey;
 ALTER TABLE imdb_actormovies DROP numparticipation;
@@ -70,7 +120,6 @@ ALTER TABLE imdb_movielanguages ADD CONSTRAINT imdb_movielanguages_pkey PRIMARY 
 -- Anadimos claves foraneas 
 ALTER TABLE imdb_movielanguages ADD FOREIGN KEY (movieid) REFERENCES IMDB_movies(movieid);
 ALTER TABLE imdb_movielanguages ADD FOREIGN KEY (lan_id) REFERENCES languages(lan_id);
-
 
 --Generos
 SELECT ROW_NUMBER() OVER (ORDER BY genre) AS genre_id, genre
