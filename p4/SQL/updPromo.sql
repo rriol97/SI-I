@@ -19,16 +19,16 @@ DECLARE
 	prod record;
 BEGIN
 
-FOR prod IN SELECT *
-	    FROM (SELECT orderid, promo FROM orders NATURAL INNER JOIN customers WHERE customerid = NEW.customerid and status = 'NULL') AS foo NATURAL INNER JOIN orderdetail
+FOR prod IN SELECT foo.orderid, products.prod_id, foo.promo, products.price
+	    FROM (SELECT orderid, promo FROM orders NATURAL INNER JOIN customers WHERE customerid = NEW.customerid and status = 'NULL') AS foo, orderdetail, products
+	    WHERE foo.orderid = orderdetail.orderid AND orderdetail.prod_id = products.prod_id 
 
 LOOP
 	UPDATE orderdetail
-	SET price = products.price * (CAST (prod.promo AS FLOAT) / 100)
-	FROM products
-	WHERE products.prod_id = prod.prod_id and prod.orderid = orderdetail.orderid;
-
+	SET price = prod.price * (CAST (prod.promo AS FLOAT) / 100)
+	WHERE orderdetail.orderid = prod.orderid AND orderdetail.prod_id = prod.prod_id;
 END LOOP;
+
 RETURN NEW; 
 END; $$ 
 LANGUAGE plpgsql;
@@ -38,7 +38,10 @@ CREATE  TRIGGER updPromo AFTER UPDATE OF promo ON customers
 FOR  EACH ROW  
 EXECUTE  PROCEDURE updPromo();
 
+SELECT * FROM orderdetail WHERE orderid = 110;
 
 UPDATE customers
 SET promo = 50
 WHERE customerid = 2;
+
+SELECT * FROM orderdetail WHERE orderid = 110;
