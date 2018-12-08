@@ -17,8 +17,6 @@ def dbCloseConnect(db_conn):
 
 def getListaCliMes(db_conn, mes, anio, iumbral, iintervalo, use_prepare, break0, niter):
 
-
-
     if use_prepare == True:
     
         q =  text( """PREPARE getListaCliMes(int, int, int) AS
@@ -114,7 +112,19 @@ def getCustomer(username, password):
 def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
     
     # Array de trazas a mostrar en la página
-    dbr=[]
+    dbr = []
+    #Comprobamos si el cliente existe
+    try:
+        query = 'SELECT customerid FROM customers WHERE customerid = %d' %(int(customerid))
+        db_conn = db_engine.connect()
+        res = db_conn.execute(query)
+        if list(res) == []:
+            dbr.append("Cliente no encontrado")
+            print dbr
+            return dbr
+    except:
+        dbr.append("Error encontrando cliente")
+        return dbr
 
     # TODO: Ejecutar consultas de borrado
     # - ordenar consultas según se desee provocar un error (bFallo True) o no
@@ -122,19 +132,71 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
     # - usar sentencias SQL ('BEGIN', 'COMMIT', ...) si bSQL es True
     # - suspender la ejecución 'duerme' segundos en el punto adecuado para forzar deadlock
     # - ir guardando trazas mediante dbr.append()
-    
-    try:
-        # TODO: ejecutar consultas
-        pass
 
+    # Conectamos a la base de datos
+    db_conn = db_engine.connect()
+    #Abrimos una transaccion para realizar las operaciones de borrado
+    try:
+        if bSQL:
+            db_conn.execute("BEGIN;")
+        else:
+            trans = db_conn.begin()
+
+        dbr.append("Iniciando transacccion")
+        
+    except:
+        dbr.append("Error iniciando transaccion")
+        return dbr
+
+    try:
+        #Realizamos el caso en el que el borrado de un cliente se debe realizar de forma correcta
+        if bFallo == False:
+            query = "DELETE FROM orderdetail WHERE orderid IN (SELECT orderid FROM orders WHERE customerid = %d);" %(int(customerid)) 
+            db_conn.execute(query)
+            dbr.append("Borrado cliente de orderdetail")
+            query = "DELETE FROM orders WHERE customerid = %d;" % (int(customerid))
+            db_conn.execute(query)
+            dbr.append("Borrado cliente de orders")
+            query = "DELETE FROM customers WHERE customerid = %d;" %(int(customerid))
+            db_conn.execute(query)
+            dbr.append("Borrado de cliente")
+            pass
+        #Realizamos el borrado en un orden erroneo    
+        else:
+            query = "DELETE FROM orderdetail WHERE orderid IN (SELECT orderid FROM orders WHERE customerid = %d);" %(int(customerid)) 
+            db_conn.execute(query)
+            dbr.append("Borrado cliente de orderdetail")
+
+            #Hacemos commit intermedio
+            if bCommit:
+                dbr.append('Commit intermedio')
+                if bSQL:
+                    db_conn.execute("COMMIT;")
+                    db_conn.execute("BEGIN;")
+                else:
+                    trans.commit()
+                    trans = db_conn.begin()
+
+            query = "DELETE FROM customers WHERE customerid = %d;" %(int(customerid))
+            db_conn.execute(query)
+            dbr.append("Borrado de cliente")
+            query = "DELETE FROM orders WHERE customerid = %d;" % (int(customerid))
+            db_conn.execute(query)
+            dbr.append("Borrado cliente de orders")
+                
     except Exception as e:
-        # TODO: deshacer en caso de error
+        if bSQL:
+            db_conn.execute("ROLLBACK;")
+        else:
+            trans.rollback()
+        dbr.append("Se ha producido un conflicto. Realizamos rollback para cumplir con la atomicidad")
         pass
 
     else:
-        # TODO: confirmar cambios si todo va bien
-        pass
-        
+        if bSQL:
+            db_conn.execute("COMMIT");
+        else:
+            trans.commit()
+        dbr.append("Operacion de borrado corectamente")    
+        pass                
     return dbr
-
-
