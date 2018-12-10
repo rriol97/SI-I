@@ -24,8 +24,11 @@ FOR prod IN SELECT foo.orderid, products.prod_id, foo.promo, products.price
 	    WHERE foo.orderid = orderdetail.orderid AND orderdetail.prod_id = products.prod_id 
 
 LOOP
+	--Hacemos un sleep de n segundos
+	PERFORM pg_sleep(5);
+	--Actualizamos el precio
 	UPDATE orderdetail
-	SET price = prod.price * (CAST (prod.promo AS FLOAT) / 100)
+	SET price = prod.price * (1 - (CAST (prod.promo AS FLOAT) / 100))
 	WHERE orderdetail.orderid = prod.orderid AND orderdetail.prod_id = prod.prod_id;
 END LOOP;
 
@@ -38,10 +41,10 @@ CREATE  TRIGGER updPromo AFTER UPDATE OF promo ON customers
 FOR  EACH ROW  
 EXECUTE  PROCEDURE updPromo();
 
-SELECT * FROM orderdetail WHERE orderid = 110;
+--SELECT * FROM orderdetail WHERE orderid = 110;
 
-UPDATE customers
-SET promo = 50
-WHERE customerid = 2;
+--UPDATE customers
+--SET promo = 30
+--WHERE customerid = 2;
 
-SELECT * FROM orderdetail WHERE orderid = 110;
+--SELECT * FROM orderdetail WHERE orderid = 110;

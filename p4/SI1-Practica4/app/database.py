@@ -153,6 +153,7 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
         if bFallo == False:
             query = "DELETE FROM orderdetail WHERE orderid IN (SELECT orderid FROM orders WHERE customerid = %d);" %(int(customerid)) 
             db_conn.execute(query)
+            time.sleep(5)
             dbr.append("Borrado cliente de orderdetail")
             query = "DELETE FROM orders WHERE customerid = %d;" % (int(customerid))
             db_conn.execute(query)
