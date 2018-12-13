@@ -18,13 +18,13 @@ def dbCloseConnect(db_conn):
 def getListaCliMes(db_conn, mes, anio, iumbral, iintervalo, use_prepare, break0, niter):
 
     if use_prepare == True:
-    
+
         q =  text( """PREPARE getListaCliMes(int, int, int) AS
                  SELECT COUNT(DISTINCT customerid) as cc
                  FROM orders
-                 WHERE totalamount > $1 
-                       AND EXTRACT (YEAR FROM orderdate) = $2 
-                       AND EXTRACT (MONTH FROM orderdate) = $3; """ )       
+                 WHERE totalamount > $1
+                       AND EXTRACT (YEAR FROM orderdate) = $2
+                       AND EXTRACT (MONTH FROM orderdate) = $3; """ )
 
         db_conn.execute(q)
 
@@ -60,7 +60,7 @@ def getListaCliMes(db_conn, mes, anio, iumbral, iintervalo, use_prepare, break0,
 
 
             return dbr
-        
+
         # Actualizacion de umbral
         iumbral = iumbral + iintervalo
 
@@ -70,7 +70,7 @@ def getListaCliMes(db_conn, mes, anio, iumbral, iintervalo, use_prepare, break0,
         q = text("DEALLOCATE getListaCliMes;")
         db_conn.execute(q)
 
-                
+
     return dbr
 
 def getMovies(anio):
@@ -88,29 +88,29 @@ def getMovies(anio):
             # build up the dictionary
             d[tup[0]] = tup[1]
         a.append(d)
-        
-    resultproxy.close()  
-    
-    db_conn.close()  
-    
+
+    resultproxy.close()
+
+    db_conn.close()
+
     return a
-    
+
 def getCustomer(username, password):
     # conexion a la base de datos
     db_conn = db_engine.connect()
 
     query="select * from customers where username='" + username + "' and password='" + password + "'"
     res=db_conn.execute(query).first()
-    
-    db_conn.close()  
+
+    db_conn.close()
 
     if res is None:
         return None
     else:
         return {'firstname': res['firstname'], 'lastname': res['lastname']}
-    
+
 def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
-    
+
     # Array de trazas a mostrar en la página
     dbr = []
     #Comprobamos si el cliente existe
@@ -143,7 +143,7 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
             trans = db_conn.begin()
 
         dbr.append("Iniciando transacccion")
-        
+
     except:
         dbr.append("Error iniciando transaccion")
         return dbr
@@ -151,20 +151,19 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
     try:
         #Realizamos el caso en el que el borrado de un cliente se debe realizar de forma correcta
         if bFallo == False:
-            query = "DELETE FROM orderdetail WHERE orderid IN (SELECT orderid FROM orders WHERE customerid = %d);" %(int(customerid)) 
+            query = "DELETE FROM orderdetail WHERE orderid IN (SELECT orderid FROM orders WHERE customerid = %d);" %(int(customerid))
             db_conn.execute(query)
-            time.sleep(5)
             dbr.append("Borrado cliente de orderdetail")
             query = "DELETE FROM orders WHERE customerid = %d;" % (int(customerid))
             db_conn.execute(query)
             dbr.append("Borrado cliente de orders")
+            time.sleep(int(duerme))
             query = "DELETE FROM customers WHERE customerid = %d;" %(int(customerid))
             db_conn.execute(query)
             dbr.append("Borrado de cliente")
-            pass
-        #Realizamos el borrado en un orden erroneo    
+        #Realizamos el borrado en un orden erroneo
         else:
-            query = "DELETE FROM orderdetail WHERE orderid IN (SELECT orderid FROM orders WHERE customerid = %d);" %(int(customerid)) 
+            query = "DELETE FROM orderdetail WHERE orderid IN (SELECT orderid FROM orders WHERE customerid = %d);" %(int(customerid))
             db_conn.execute(query)
             dbr.append("Borrado cliente de orderdetail")
 
@@ -184,20 +183,23 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
             query = "DELETE FROM orders WHERE customerid = %d;" % (int(customerid))
             db_conn.execute(query)
             dbr.append("Borrado cliente de orders")
-                
+
     except Exception as e:
         if bSQL:
             db_conn.execute("ROLLBACK;")
         else:
             trans.rollback()
+
+        dbr.append(str(e))
         dbr.append("Se ha producido un conflicto. Realizamos rollback para cumplir con la atomicidad")
         pass
 
     else:
         if bSQL:
-            db_conn.execute("COMMIT");
+            db_conn.execute("COMMIT;");
         else:
             trans.commit()
-        dbr.append("Operacion de borrado corectamente")    
-        pass                
+        dbr.append("Operacion de borrado corectamente")
+        pass
+    dbCloseConnect(db_conn)
     return dbr
